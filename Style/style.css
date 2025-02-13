@@ -1,3 +1,4 @@
+/* General styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,6 +6,7 @@ body {
     text-align: center; /* Center all text by default */
 }
 
+/* Headings */
 h1 {
     text-align: center;
     color: #f98f1f;
@@ -12,64 +14,63 @@ h1 {
     font-size: 48px;
 }
 
+h2, h3, #Registration, #Description {
+    text-align: center; /* Keep headings and descriptions centered */
+}
+
 h2 {
     color: #888;
     font-size: 40px;
-    text-align: center;
-    margin-left: 0; /* Remove margin-left */
 }
 
 h3 {
     color: #f98f1f;
-    text-align: center;
-    margin-left: 0; /* Remove margin-left */
 }
 
-#PersonalInfo {
-    color: #888;
-    font-size: 40px;
-    text-align: center;
-    margin-left: 0; /* Remove margin-left */
-}
-
-#Registration {
-    color: #888;
-    font-size: 40px;
-    text-align: center;
-    margin-left: 0; /* Remove margin-left */
-}
-
-#Description {
-    color: #888;
-    font-style: italic;
-    font-size: 15px;
-    text-align: center;
-    margin-left: 0; /* Remove margin-left */
-}
-
+/* Form container */
 form {
     max-width: 300px;
     margin: 0 auto;
-    text-align: center;
+    text-align: left; /* Align form elements to the left */
 }
 
-label {
+/* Labels should be left-aligned only above text fields */
+form label {
     font-weight: bold;
-    text-align: center;
-    display: block; /* Make labels block elements */
+    display: block; /* Ensure labels appear above inputs */
     margin-bottom: 5px;
+    text-align: left; /* Align labels to the left */
+    font-size: 14px; /* Adjust size if needed */
 }
 
-input[type="tel"],
+/* Input fields */
 input[type="text"],
 input[type="email"],
 input[type="date"] {
-    margin: 0 auto;
-    margin-bottom: 10px;
     width: 100%;
     max-width: 250px;
+    display: block;
+    margin-bottom: 10px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    padding: 5px;
 }
 
+/* Phone input field (special case) */
+.phone-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+#phoneNumber {
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+/* Button styles */
 button {
     display: block;
     margin: 10px auto;
@@ -86,6 +87,30 @@ button:hover {
     background-color: #FF5F15;
 }
 
+/* Checkbox alignment */
+input[type="checkbox"] {
+    margin: 0 5px;
+    vertical-align: middle;
+}
+
+/* Label for the "No Email Address" checkbox */
+.grey-label {
+    font-size: 10px;
+    color: #888;
+    text-align: center;
+}
+
+/* Error messages */
+.error-message {
+    color: #ff0000;
+    font-size: 12px;
+    font-style: italic;
+    display: block;
+    margin-top: 5px;
+    text-align: left;
+}
+
+/* Display box for user information */
 #displayInfo {
     max-width: 300px;
     margin: 20px auto;
@@ -95,6 +120,7 @@ button:hover {
     text-align: center;
 }
 
+/* Footer */
 footer {
     text-align: center;
     padding: 20px 0;
@@ -116,51 +142,9 @@ footer p {
     display: inline;
 }
 
+/* Separator line */
 .separator {
     border-top: 1px solid #ccc;
     margin-top: 100px;
 }
 
-.phone-input {
-    display: flex;
-    justify-content: center; /* Center the phone input */
-    align-items: center;
-    max-width: 250px;
-    margin: 0 auto;
-}
-
-#phoneNumber {
-    margin-right: 10px;
-    margin-top: 10px;
-}
-
-#name, #birthday, #email {
-    border-color: #888;
-    border-radius: 5px;
-}
-
-label {
-    font-size: 10px;
-    text-align: center;
-}
-
-.grey-label {
-    font-size: 10px;
-    color: #888;
-    text-align: center;
-}
-
-/* Add this for checkbox alignment */
-input[type="checkbox"] {
-    margin: 0 5px;
-    vertical-align: middle;
-}
-
-.error-message {
-    color: #ff0000;
-    font-size: 12px;
-    font-style: italic;
-    display: block;
-    margin-top: 5px;
-    text-align: left;
-}
