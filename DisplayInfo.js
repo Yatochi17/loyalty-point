@@ -6,39 +6,37 @@ document.addEventListener('DOMContentLoaded', function () {
         const birthday = document.getElementById('birthday').value;
         const email = document.getElementById('email').value;
 
-        // Add validation with error messages
-        if (!name.trim()) {
-            document.getElementById('nameError').textContent = '*Please insert a name.';
-            return;
+
+        if (name && birthday && (email || document.getElementById('noEmail').checked)) {
+            sessionStorage.setItem('name', name);
+            sessionStorage.setItem('birthday', birthday);
+            sessionStorage.setItem('email', email);
+
+            window.location.href = 'Page3.html';
+        } else {
+            // Add red text under empty fields
+            if (!name) {
+                document.getElementById('nameWarning').style.display = 'block';
+            }
+            if (!birthday) {
+                document.getElementById('birthdayWarning').style.display = 'block';
+            }
+            if (!email && !document.getElementById('noEmail').checked) {
+                document.getElementById('emailWarning').style.display = 'block';
+            }
         }
-
-        if (!birthday) {
-            document.getElementById('birthdayError').textContent = '*Please insert your birthday.';
-            return;
-        }
-
-        if (!email.trim() && !document.getElementById('noEmail').checked) {
-            document.getElementById('emailError').textContent = '*Please insert a valid email address.';
-            return;
-        }
-
-        sessionStorage.setItem('name', name);
-        sessionStorage.setItem('birthday', birthday);
-        sessionStorage.setItem('email', email);
-
-        window.location.href = 'Page3.html';
     });
 
-    // Clear error messages when user starts typing
+    // Clear warnings when user types
     document.getElementById('name').addEventListener('input', function() {
-        document.getElementById('nameError').textContent = '';
+        document.getElementById('nameWarning').style.display = 'none';
     });
-    
+
     document.getElementById('birthday').addEventListener('input', function() {
-        document.getElementById('birthdayError').textContent = '';
+        document.getElementById('birthdayWarning').style.display = 'none';
     });
-    
+
     document.getElementById('email').addEventListener('input', function() {
-        document.getElementById('emailError').textContent = '';
+        document.getElementById('emailWarning').style.display = 'none';
     });
 });
