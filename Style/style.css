@@ -1,0 +1,142 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #f98f1f;
+    font-weight: bold;
+    font-size: 48px;
+}
+
+h2 {
+    color: #888;
+    font-size: 40px;
+    margin-left: 450px;
+}
+
+h3 {
+    color: #f98f1f;
+    margin-left: 450px;
+}
+
+#PersonalInfo {
+    color: #888;
+    font-size: 40px;
+    margin-left: 550px;
+}
+
+#Registration{
+    color: #888;
+    font-size: 40px;
+    margin-left: 500px;
+}
+#Description {
+    color: #888;
+    font-style: italic;
+    font-size: 15px;
+    margin-left: 500px;
+}
+
+form {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="tel"],
+input[type="text"],
+input[type="email"],
+input[type="date"],
+
+button {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #f98f1f;
+    color: white;
+    padding: 10px 20px;
+    width: 250px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+button:hover {
+    background-color: #FF5F15;
+}
+
+#displayInfo {
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .powered-by {
+    color: #888;
+}
+
+
+footer .mulah-rewards {
+    color: #007bff;
+    font-weight: bold;
+}
+
+footer p {
+    display: inline;
+}
+
+.separator {
+    border-top: 1px solid #ccc;
+    margin-top: 100px;
+}
+
+.phone-input {
+    display: flex;
+    align-items: center;
+}
+
+
+#phoneNumber {
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+#name {
+    border-color: #888;
+    border-radius: 5px;
+}
+
+#birthday {
+    border-radius: 5px;
+}
+
+#email {
+    border-radius: 5px;
+}
+
+label {
+    font-size: 10px;
+}
+
+.grey-label {
+    font-size: 10px;
+    color: #888;
+}

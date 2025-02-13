@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Style/style.css">
+    <title>Page 3</title>
+</head>
+
+<body>
+    <h1>MULAH</h1>
+    <h2 id="PersonalInfo">Personal Information</h2>
+    <div id="displayInfo">
+        <p><strong>Phone Number:</strong> <span id="phoneNumber"></span></p>
+    </div>
+    <div id="displayInfo">
+        <p><strong>Name:</strong> <span id="name"></span></p>
+    </div>
+    <div id="displayInfo">
+        <p><strong>Email:</strong> <span id="email"></span></p>
+    </div>
+    <div id="displayInfo">
+        <p><strong>Birthday:</strong> <span id="birthday"></span></p>
+    </div>
+
+    <footer>
+        <p class="powered-by">Powered by</p>
+        <p class="mulah-rewards">MulahRewards.com</p>
+    </footer>
+
+    <script>
+        document.getElementById('phoneNumber').textContent = sessionStorage.getItem('phoneNumber');
+        document.getElementById('name').textContent = sessionStorage.getItem('name');
+        document.getElementById('birthday').textContent = sessionStorage.getItem('birthday');
+        document.getElementById('email').textContent = sessionStorage.getItem('email');
+    </script>
+
+</body>
+
+</html>
