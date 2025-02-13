@@ -87,10 +87,9 @@ button:hover {
     background-color: #FF5F15;
 }
 
-/* Checkbox alignment */
 input[type="checkbox"] {
-    margin: 0 5px;
-    vertical-align: middle;
+    vertical-align: middle; /* Align checkbox with text */
+    margin-right: 5px; /* Add small spacing */
 }
 
 /* Label for the "No Email Address" checkbox */
