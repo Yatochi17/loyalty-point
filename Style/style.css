@@ -97,7 +97,9 @@ input[type="checkbox"] {
 .grey-label {
     font-size: 10px;
     color: #888;
-    text-align: center;
+    text-align: left; /* Change from center to left */
+    display: inline; /* Make it inline with the checkbox */
+    margin-left: 5px; /* Add small spacing */
 }
 
 /* Error messages */
