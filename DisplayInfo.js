@@ -1,53 +1,44 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('page2Form');
-    const nameError = document.getElementById('nameError');
-    const birthdayError = document.getElementById('birthdayError');
-    const emailError = document.getElementById('emailError');
+    document.getElementById('page2Form').addEventListener('submit', function (event) {
+        event.preventDefault(); 
 
-    form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        
-        // Reset error messages
-        nameError.textContent = '';
-        birthdayError.textContent = '';
-        emailError.textContent = '';
-
-        let isValid = true;
         const name = document.getElementById('name').value;
         const birthday = document.getElementById('birthday').value;
         const email = document.getElementById('email').value;
-        const noEmail = document.getElementById('noEmail').checked;
 
+        // Add validation with error messages
         if (!name.trim()) {
-            nameError.textContent = '*Please insert a name.';
-            isValid = false;
+            document.getElementById('nameError').textContent = '*Please insert a name.';
+            return;
         }
 
         if (!birthday) {
-            birthdayError.textContent = '*Please insert your birthday.';
-            isValid = false;
+            document.getElementById('birthdayError').textContent = '*Please insert your birthday.';
+            return;
         }
 
-        if (!noEmail && !email.trim()) {
-            emailError.textContent = '*Please insert a valid email address.';
-            isValid = false;
+        if (!email.trim() && !document.getElementById('noEmail').checked) {
+            document.getElementById('emailError').textContent = '*Please insert a valid email address.';
+            return;
         }
 
-        if (isValid) {
-            sessionStorage.setItem('name', name);
-            sessionStorage.setItem('birthday', birthday);
-            sessionStorage.setItem('email', email);
-            window.location.href = 'Page3.html';
-        }
+        sessionStorage.setItem('name', name);
+        sessionStorage.setItem('birthday', birthday);
+        sessionStorage.setItem('email', email);
+
+        window.location.href = 'Page3.html';
     });
 
-    // Handle the "No Email Address" checkbox
-    document.getElementById('noEmail').addEventListener('change', function() {
-        const emailInput = document.getElementById('email');
-        emailInput.disabled = this.checked;
-        if (this.checked) {
-            emailInput.value = '';
-            emailError.textContent = '';
-        }
+    // Clear error messages when user starts typing
+    document.getElementById('name').addEventListener('input', function() {
+        document.getElementById('nameError').textContent = '';
+    });
+    
+    document.getElementById('birthday').addEventListener('input', function() {
+        document.getElementById('birthdayError').textContent = '';
+    });
+    
+    document.getElementById('email').addEventListener('input', function() {
+        document.getElementById('emailError').textContent = '';
     });
 });
