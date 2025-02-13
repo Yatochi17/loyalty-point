@@ -1,1 +1,1 @@
-host website: 
+host website: https://yatochi17.github.io/loyalty-point/
